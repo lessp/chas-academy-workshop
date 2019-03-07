@@ -1,0 +1,28 @@
+{
+  "name": "chas-academy-test-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "16.8.2",
+    "react-dom": "16.8.2",
+    "react-scripts": "2.1.5"
+  },
+  "devDependencies": {
+    "jest-dom": "3.1.2",
+    "react-testing-library": "5.8.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

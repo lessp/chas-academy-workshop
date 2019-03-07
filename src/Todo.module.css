@@ -1,0 +1,145 @@
+:root {
+  --border-radius: 5px;
+  --box-shadow-contrast: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  --box-shadow-white: 0px 8px 24px rgba(0, 0, 0, 0.05);
+  --contrast-color: hsl(225, 97%, 70%);
+  --filter-active-color: hsl(225, 70%, 60%);
+  --filter-inactive-color: hsl(225, 70%, 70%);
+  --silent-color: hsl(225, 11%, 85%);
+  --text-color: hsl(225, 67%, 20%);
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 608px;
+}
+
+.wrapper > form {
+  align-items: stretch;
+  display: flex;
+  width: 100%;
+}
+
+.title {
+  color: var(--text-color);
+  font-family: "Rubik", sans-serif;
+  font-size: 36px;
+  margin: 74px 0;
+  text-align: center;
+}
+
+.input {
+  all: unset;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-white);
+  color: var(--text-color);
+  flex: 1;
+  padding: 14px 24px;
+  width: 415px;
+}
+
+.input::placeholder {
+  color: var(--silent-color);
+}
+
+.primaryButton {
+  all: unset;
+  background-color: var(--contrast-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-contrast);
+  color: white;
+  cursor: pointer;
+  margin-left: 24px;
+  padding: 12px 36px;
+}
+
+.empty {
+  margin-bottom: 36px;
+  margin-top: 96px;
+}
+
+.text {
+  color: var(--text-color);
+}
+
+.list {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.item {
+  align-items: center;
+  all: unset;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.todoItem {
+  all: unset;
+  align-items: center;
+  background-color: var(--contrast-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-contrast);
+  color: white;
+  display: flex;
+  flex: 1;
+  padding: 14px 24px;
+}
+
+.filters {
+  align-items: center;
+  all: unset;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.filters > li {
+  cursor: pointer;
+}
+
+.filters > li + li {
+  margin-left: 8px;
+}
+
+.filter {
+  all: unset;
+  background: transparent;
+  color: var(--filter-inactive-color);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 18px;
+  transition: all 200ms ease;
+}
+
+.filterActive {
+  all: unset;
+  background: white;
+  border-radius: 96px;
+  color: var(--filter-active-color);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 18px;
+}
+
+.icon {
+  align-items: center;
+  all: unset;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-left: 24px;
+  width: 56px;
+  height: 56px;
+}

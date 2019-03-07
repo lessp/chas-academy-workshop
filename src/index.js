@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import TodoApp from "./TodoApp/TodoApp";
+import TodoApp from './TodoApp/TodoApp'
 
-import "./styles.css";
+import './styles.css'
 
 function App() {
-  return <TodoApp />;
+  return <TodoApp />
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)

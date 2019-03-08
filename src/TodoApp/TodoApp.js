@@ -50,11 +50,11 @@ function TodoApp() {
     }
   }
 
+  const hasTodos = !!todos.length
+
   return (
     <div className={Todo.wrapper}>
       <h1 className={Todo.title}>What do I need to do!</h1>
-
-      {/* Input */}
       <form onSubmit={handleSubmit}>
         <input
           className={Todo.input}
@@ -67,34 +67,40 @@ function TodoApp() {
           Add
         </button>
       </form>
+      {hasTodos && (
+        <ul className={Todo.filters}>
+          {availableFilters.map(f => (
+            <li
+              key={f}
+              className={f === activeFilter ? Todo.filterActive : Todo.filter}
+              onClick={_event => setActiveFilter(f)}>
+              {f}
+            </li>
+          ))}
+        </ul>
+      )}
 
-      {/* Filters */}
-      <ul className={Todo.filters}>
-        {availableFilters.map(f => (
-          <li
-            key={f}
-            className={f === activeFilter ? Todo.filterActive : Todo.filter}
-            onClick={_event => setActiveFilter(f)}>
-            {f}
-          </li>
-        ))}
-      </ul>
-
-      {/* List todos */}
-      <ul className={Todo.list}>
-        {todos.filter(byActiveFilter).map(t => (
-          <li key={t.text} className={Todo.item}>
-            <p className={Todo.todoItem}>{t.text}</p>
-            <button className={Todo.icon} onClick={_event => toggleTodo(t)}>
-              {t.done ? (
-                <img alt="Incomplete" src={deleteIcon} />
-              ) : (
-                <img alt="Complete" src={checkIcon} />
-              )}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {hasTodos ? (
+        <ul className={Todo.list}>
+          {todos.filter(byActiveFilter).map(t => (
+            <li key={t.text} className={Todo.item}>
+              <p className={Todo.todoItem}>{t.text}</p>
+              <button className={Todo.icon} onClick={_event => toggleTodo(t)}>
+                {t.done ? (
+                  <img alt="Incomplete" src={deleteIcon} />
+                ) : (
+                  <img alt="Complete" src={checkIcon} />
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <>
+          <img alt="No todos" src={todoEmpty} className={Todo.empty} />
+          <p className={Todo.text}>Why don't you add some todos!</p>
+        </>
+      )}
     </div>
   )
 }
